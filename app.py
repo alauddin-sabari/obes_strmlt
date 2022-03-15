@@ -1,8 +1,7 @@
 #https://youtu.be/LZH_7PCpN2o
 
-#https://youtu.be/LZH_7PCpN2o
-
-from pickle import FALSE
+#obes-strmlt-hSbBZa94-py3.9
+# from pickle import FALSE
 from tkinter import TRUE
 
 from sqlalchemy import true
