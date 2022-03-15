@@ -2,7 +2,7 @@
 
 #obes-strmlt-hSbBZa94-py3.9
 # from pickle import FALSE
-from tkinter import TRUE
+#from tkinter import TRUE
 
 from sqlalchemy import true
 import streamlit as st
