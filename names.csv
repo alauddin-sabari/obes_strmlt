@@ -1,21 +1,2 @@
-GSEA,Gene_name,Log Fold Change
-GSE124500,HD5DAE,0.05
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-GSEA1312,asgasafa,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-gssea1323,agadf,0.0
-,,0.0
-,,0.0
-,,0.0
-Gsea345435,542562345,0.07
-Gsea345435,542562345,0.07
+DISEASE NAME,GSE NUMBER,  Data Source,  Source link(Optional)
+Obesity, GSE81965, grein, http://www.ilincs.org/apps/grein/?gse=GSE81965

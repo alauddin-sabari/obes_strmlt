@@ -17,11 +17,13 @@ st.write(df)
 
 st.sidebar.header("Options")
 
-options_form = st.sidebar.form("GSEA NUmber")
-gsea = options_form.text_input("GSEA Number")
+options_form = st.sidebar.form("x")
+disease = options_form.text_input("DISEASE NAME")
 
-gse_number = options_form.text_input("Gene Name")
-LogFc = options_form.number_input("Log Fold Change")
+gse_number = options_form.text_input("GSE NUMBER")
+src = options_form.number_input("Data Source")
+src_link = options_form.number_input("Source link(Optional)")
+
 add_data = options_form.form_submit_button()
 
 
@@ -29,7 +31,7 @@ add_data = options_form.form_submit_button()
 # remove_last_added_data = options_form.form_submit_button()
 
 if add_data:
-    new_data = {'GSEA': gsea, 'Gene_name': gse_number, 'Log Fold Change': LogFc}
+    new_data = {'DISEASE NAME': disease, 'GSE NUMBER': gse_number, 'Data Source': src, 'Source link(Optional)': src_link}
     df = df.append(new_data, ignore_index=True)
     df = df.to_csv('names.csv', index=False)
 
@@ -40,4 +42,18 @@ if add_data:
 st.subheader("Updated Dataset")
 df1 = pd.read_csv('names.csv')
 st.write(df1.tail(5))
+
+import matplotlib.pyplot as plt
+
+# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+sizes = [15, 30, 45, 10]
+explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+st.pyplot(fig1)
 
