@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 streamlit = "*"
 sqlalchemy = "*"
+streamlit-lottie = "*"
 
 [dev-packages]
 

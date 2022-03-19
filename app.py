@@ -8,7 +8,20 @@ from sqlalchemy import true
 import streamlit as st
 import pandas as pd
 
+from streamlit_lottie import st_lottie
+import json
 st.title("Streamlit Tutorial")
+
+@st.cache(allow_output_mutation=True)
+def load_lottifile(filepath: str):
+        with open(filepath, 'r') as f:
+            return json.load(f)
+loti_path = load_lottifile('data.json')
+#st.title('Lotti')
+with st.sidebar:
+    
+    #time.sleep(3)
+    st_lottie(loti_path, width=280, height=180, loop=False)
 
 save_data = st.button("Save File")
 df = pd.read_csv('names.csv')
@@ -43,17 +56,17 @@ st.subheader("Updated Dataset")
 df1 = pd.read_csv('names.csv')
 st.write(df1.tail(5))
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-# Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-sizes = [15, 30, 45, 10]
-explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+# # Pie chart, where the slices will be ordered and plotted counter-clockwise:
+# labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+# sizes = [15, 30, 45, 10]
+# explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+# fig1, ax1 = plt.subplots()
+# ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+#         shadow=True, startangle=90)
+# ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-st.pyplot(fig1)
+# st.pyplot(fig1)
 
