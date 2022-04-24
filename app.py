@@ -10,7 +10,7 @@ import pandas as pd
 
 from streamlit_lottie import st_lottie
 import json
-st.title("Streamlit Tutorial")
+st.title("Extendable Database")
 
 @st.cache(allow_output_mutation=True)
 def load_lottifile(filepath: str):
